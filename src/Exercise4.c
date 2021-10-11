@@ -16,12 +16,20 @@ int main(int argc, char *argv[]) {
 	//testing variable, applying it to your algorithm for auto-evaluating
 	argc--;
 	int n = argc;
-	int test_array[n],i;
+	int test_array[50],i=0;
 	for(i=0; i<n;i++){
 		test_array[i] = atoi(argv[i+1]);
 	}
 	//Your codes here
+	int fact;
+	for (i=0; i<n; i++){
+		printf("%d", test_array[i]);
+	}
+	for (i=0; i<n-1; i++){
+			if (test_array[i+1] < test_array[i]){
+				fact = test_array[i];
+				test_array[i] = test_array[i+1];
+				test_array[i+1] = fact;
+		}
+	}
 	
-	
-	return 0;
-}
